@@ -195,7 +195,7 @@
                       <a-tooltip
                           :title="$t('app.analysis.introduce')"
                         >
-                          <a-icon style="margin-left: 8" type="info-circle-o" />
+                          <a-icon style="margin-left: 8px" type="info-circle-o" />
                         </a-tooltip>
                     </span>
                   </av-number-info>

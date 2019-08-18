@@ -4,29 +4,27 @@
         <a-tabs defaultActiveKey="1">
             <a-tab-pane tab="账户密码登录" key="1">
                 <a-alert v-if="error" :type="'error'" :message="error" showIcon class="mb-lg"></a-alert>
-                <a-form-item fieldDecoratorId="userName" 
-                :fieldDecoratorOptions="{rules: [{ required: true, message: '请输入账户名且至少五个字符！' }]}">
-                    <a-input size="large" placeholder='admin' v-model="loginModel.username">
+                <a-form-item>
+                    <a-input v-decorator="['userName',{rules: [{ required: true, message: '请输入账户名且至少五个字符！' }]}]" size="large" placeholder='admin' v-model="loginModel.username">
                         <a-icon slot="prefix" type='user' style="color:rgba(0,0,0,.25)" />
                     </a-input>
                 </a-form-item>
-                <a-form-item fieldDecoratorId="password"
-                :fieldDecoratorOptions="{rules: [{ required: true, message: '请输入密码！' }]}">
-                    <a-input size="large" type="password" placeholder="888888" v-model="loginModel.password">
+                <a-form-item >
+                    <a-input v-decorator="['password',{rules: [{ required: true, message: '请输入密码！' }]}]" size="large" type="password" placeholder="888888" v-model="loginModel.password">
                         <a-icon slot="prefix" type='lock' style="color:rgba(0,0,0,.25)" />
                     </a-input>
                 </a-form-item>
             </a-tab-pane>
             <a-tab-pane tab="手机号登录" key="2">
                 <a-form-item fieldDecoratorId="mobile">
-                    <a-input size="large" placeholder="手机号">
+                    <a-input v-decorator="['mobile']" size="large" placeholder="手机号">
                         <a-icon slot="prefix" type='user' style="color:rgba(0,0,0,.25)" />
                     </a-input>
                 </a-form-item>
                 <a-form-item fieldDecoratorId="captcha">
                     <a-input-group size="large">
                         <a-col :span="16">
-                            <a-input placeholder="验证码">
+                            <a-input v-decorator="['captcha']" placeholder="验证码">
                                 <a-icon slot="prefix" type='mail' style="color:rgba(0,0,0,.25)" />
                             </a-input>
                         </a-col>
@@ -37,9 +35,9 @@
                 </a-form-item>
             </a-tab-pane>
         </a-tabs>
-        <a-form-item fieldDecoratorId="remember">
+        <a-form-item >
             <a-col :span="12">
-                <a-checkbox>自动登录</a-checkbox>
+                <a-checkbox v-decorator="['remember']">自动登录</a-checkbox>
                 <!--
                 <label nz-checkbox formControlName="remember">自动登录</label>
                 -->
