@@ -60,8 +60,9 @@ export default class FormProperty {
 
     get formitemAttrs() {
         const attrs = this.ui.itemattrs;
-        attrs.fieldDecoratorId = this.key;
-        attrs.fieldDecoratorOptions = this.fieldDecoratorOptions;
+        //attrs.fieldDecoratorId = this.key;
+        //attrs.fieldDecoratorOptions = this.fieldDecoratorOptions;
+        attrs["v-decorator"] = [this.key,this.fieldDecoratorOptions];
         return attrs;
     }
 

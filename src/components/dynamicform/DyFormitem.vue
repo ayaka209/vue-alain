@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="d-flex">
     <component v-for="(formitem,index) in properties"
     :key="index"
     :is="createWidgets(formitem)"
